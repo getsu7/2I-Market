@@ -7,4 +7,4 @@ Un site de revente de matériel reconditionné
 
 ---
 
-Edited by: **@sudo-destin**
+Edited by: <a href="https://github.com/sudo-destin"><strong>@sudo-destin</strong></a>

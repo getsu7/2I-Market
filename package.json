@@ -2,6 +2,7 @@
   "name": "2i-market",
   "version": "1.0.0",
   "description": "Descr",
+  "type": "module",
   "scripts": {
     "start": "http-server",
     "test": "echo \"Error: no test specified\" && exit 1"

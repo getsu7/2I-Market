@@ -1,13 +1,10 @@
-import { insertElement } from './functions/insertElement.js';
+import createNavBar from './components/NavBar/index.js';
 
-document.body.onload = addApp;
+document.body.onload = loadApp;
 
-function addApp() {
-    const app = document.createElement("div");
-    app.setAttribute("id", "root");
-    document.body.insertAdjacentElement("beforeend", app);
-    const root = document.querySelector("#root");
-    const navBar = insertElement('nav', 'navbar navbar-expand-lg bg-dark', root);
-    const container = insertElement('div', 'container-fluid', navBar);
-    insertElement('a', 'navbar-brand', container);
+function loadApp() {
+    const app = document.createElement('div');
+    app.setAttribute('id', 'root');
+    document.body.appendChild(app);
+    createNavBar();
 }

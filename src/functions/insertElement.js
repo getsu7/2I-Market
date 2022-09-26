@@ -1,6 +1,6 @@
-export function insertElement(tag, className, parent) {
+export default function insertElement(tag, className, parent) {
     const el = document.createElement(tag);
     el.setAttribute('class', className);
-    parent.insertAdjacentElement("beforeend", el);
+    parent.appendChild(el);
     return el;
 }

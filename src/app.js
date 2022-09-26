@@ -1,5 +1,3 @@
-console.log(document.body);
-
 const body = document.body;
 
 const h2 = document.createElement('h2');
@@ -104,6 +102,51 @@ divNav1.style.justifyContent = 'space-between';
 divNav1.appendChild(divNav2);
 divNav1.appendChild(formResearchBar);
 
+
+
+
+
+
+const divCarousel = document.createElement('div');
+divCarousel.setAttribute('id', 'myCarousel');
+divCarousel.setAttribute('class', 'carousel slide');
+divCarousel.setAttribute('data-bs-ride', 'carousel');
+
+const divInnerCarousel = document.createElement('div');
+divInnerCarousel.setAttribute('class', 'carousel-inner');
+
+const divInnerCarouselItem1 = document.createElement('div');
+const divInnerCarouselItem2 = document.createElement('div');
+const divInnerCarouselItem3 = document.createElement('div');
+
+divInnerCarouselItem1.setAttribute('class', 'carousel-item active');
+divInnerCarouselItem2.setAttribute('class', 'carousel-item');
+divInnerCarouselItem3.setAttribute('class', 'carousel-item');
+
+const divInnerCarouselItem1Img = document.createElement('img');
+const divInnerCarouselItem2Img = document.createElement('img');
+const divInnerCarouselItem3Img = document.createElement('img');
+
+divInnerCarouselItem1Img.src = 'images/proxy-image.jpg';
+divInnerCarouselItem2Img.src = 'images/proxy-image.png';
+divInnerCarouselItem3Img.src = 'images/proxy-image3.jpg';
+
+divInnerCarouselItem1Img.setAttribute('class', 'd-block w-20');
+divInnerCarouselItem2Img.setAttribute('class', 'd-block w-20');
+divInnerCarouselItem3Img.setAttribute('class', 'd-block w-20');
+
+
+divInnerCarouselItem1.appendChild(divInnerCarouselItem1Img);
+divInnerCarouselItem2.appendChild(divInnerCarouselItem2Img);
+divInnerCarouselItem3.appendChild(divInnerCarouselItem3Img);
+
+divInnerCarousel.appendChild(divInnerCarouselItem1);
+divInnerCarousel.appendChild(divInnerCarouselItem2);
+divInnerCarousel.appendChild(divInnerCarouselItem3);
+
+divCarousel.appendChild(divInnerCarousel);
+
 body.appendChild(nav);
 
 body.appendChild(h2);
+body.appendChild(divCarousel);

@@ -1,0 +1,25 @@
+{
+  "name": "2i-market",
+  "version": "1.0.0",
+  "description": "Descr",
+  "scripts": {
+    "start": "http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudo-destin/2I-Market.git"
+  },
+  "author": "Tom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sudo-destin/2I-Market/issues"
+  },
+  "homepage": "https://github.com/sudo-destin/2I-Market#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.1"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

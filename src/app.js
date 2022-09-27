@@ -1,5 +1,4 @@
 import createNavBar from './components/NavBar/index.js';
-import createCarousel from './components/AdCarousel/index.js'
 
 document.body.onload = loadApp;
 
@@ -9,5 +8,4 @@ function loadApp() {
     document.body.appendChild(app);
     const root = document.querySelector('#root');
     createNavBar(root);
-    createCarousel(root);
 }

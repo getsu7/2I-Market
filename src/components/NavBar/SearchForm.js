@@ -1,6 +1,5 @@
 import insertElement from '../../functions/insertElement.js';
 
-
 export default function createSearchForm(container) {
     const searchForm = insertElement('form', 'd-flex', container);
     searchForm.setAttribute('role', 'search');

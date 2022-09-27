@@ -15,7 +15,7 @@ const carouselItems = [{
 }];
 
 export default function createCarousel(app) {
-    const container = insertElement('div', 'carousel slide container', app);
+    const container = insertElement('div', 'carousel slide container content', app);
     container.setAttribute('id', 'carouselExampleSlidesOnly');
     container.setAttribute('data-bs-ride', 'carousel');
     const inner = insertElement('div', 'carousel-inner', container);
@@ -31,7 +31,7 @@ export default function createCarousel(app) {
         image.setAttribute('style', 'margin-top:30px;height:200px');
     });
     let activeCarouselItemId = 1;
-    setInterval(() => { 
+    const interval = setInterval(() => { 
         if (activeCarouselItemId === 3) {
             activeCarouselItemId = 1;
         } else {
@@ -41,6 +41,10 @@ export default function createCarousel(app) {
             item.classList.remove('active');
         });
         const activeCarouselItem = document.getElementById(`${activeCarouselItemId}`);
+        if (activeCarouselItem === null) {
+            clearInterval(interval);
+            return;
+        }
         activeCarouselItem.classList.add('active');
-    }, 2000); 
+    }, 3000); 
 }

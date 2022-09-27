@@ -4,4 +4,5 @@ export default function getConsole() {
     const root = document.querySelector('#root');
     const title = insertElement('h1', 'content', root);
     title.appendChild(document.createTextNode('Console'));
+    title.style.textAlign = 'center';
 }

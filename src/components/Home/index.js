@@ -5,5 +5,6 @@ export default function getHome() {
     const root = document.querySelector('#root');
     const title = insertElement('h1', 'content', root);
     title.appendChild(document.createTextNode('Home'));
+    title.style.textAlign = 'center';
     createCarousel(root);
 }

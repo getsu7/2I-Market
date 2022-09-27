@@ -1,10 +1,24 @@
+import { creatDiv } from "./AllProducts.js";
+
+import { BonsPlansComponent } from "./BonsPlans.js";
+
+import { SmartphonesComponent } from "./Smartphones.js";
+
+import { PcMacComponent } from "./PcMacComponent.js";
+
+import { createAHref } from "./functions.js";
+
+console.log(creatDiv);
 const body = document.body;
+const container = document.createElement("div");
 
 const h2 = document.createElement('h2');
 
 const titreTopVente = document.createTextNode("Le Top des ventes");
 h2.appendChild(titreTopVente);
 
+h2.style.marginLeft = '5%';
+h2.style.textDecoration = 'underline';
 
 const nav = document.createElement('nav');
 const divNav1 = document.createElement('div');
@@ -23,8 +37,6 @@ aDivNav1.setAttribute('class', 'navbar-brand');
 aDivNav1.style.color = 'white';
 
 const divNav2 = document.createElement('div');
-// divNav2.setAttribute('class', 'collapse navbar-collapse');
-// divNav2.setAttribute('id', 'navbarSupportedContent');
 
 const ulNavbar = document.createElement('ul');
 ulNavbar.setAttribute('class', 'navbar-nav me-auto mb-2 mb-lg-0');
@@ -45,6 +57,22 @@ aLi1.setAttribute('class', 'nav-link');
 aLi2.setAttribute('class', 'nav-link');
 aLi3.setAttribute('class', 'nav-link');
 aLi4.setAttribute('class', 'nav-link');
+
+aLi1.addEventListener('click', function () {
+        body.replaceChild(creatDiv, body.lastChild);
+})
+
+aLi2.addEventListener('click', function () {
+        body.replaceChild(BonsPlansComponent, body.lastChild);
+});
+
+aLi3.addEventListener('click', function () {
+    body.replaceChild(SmartphonesComponent, body.lastChild);
+});
+
+aLi4.addEventListener('click', function () {
+    body.replaceChild(PcMacComponent, body.lastChild);
+});
 
 aLi1.style.color = 'white';
 aLi2.style.color = 'white';
@@ -79,10 +107,6 @@ ulNavbar.appendChild(li3);
 ulNavbar.appendChild(li4);
 
 
-// ulNavbar.style.display = 'flex';
-// ulNavbar.style.justifyContent = 'center';
-
-
 const formResearchBar = document.createElement('form');
 formResearchBar.setAttribute('class', 'd-flex');
 formResearchBar.setAttribute('role', 'search');
@@ -95,16 +119,22 @@ inputResearchBar.setAttribute('aria-label', 'Search');
 
 formResearchBar.appendChild(inputResearchBar);
 
+/** Test Fonction */
+const divTest = document.createElement('div');
+divTest.setAttribute('id', 'test');
+const aDiv= '';
+const createDivAHref = createAHref(aDiv, divTest, 3);
+
+body.appendChild(divTest);
+
+console.log(createDivAHref);
+/** FIN Test Fonction */
 
 divNav1.style.display = 'flex';
 divNav1.style.justifyContent = 'space-between';
 
 divNav1.appendChild(divNav2);
 divNav1.appendChild(formResearchBar);
-
-
-
-
 
 
 const divCarousel = document.createElement('div');
@@ -144,9 +174,14 @@ divInnerCarousel.appendChild(divInnerCarouselItem1);
 divInnerCarousel.appendChild(divInnerCarouselItem2);
 divInnerCarousel.appendChild(divInnerCarouselItem3);
 
+divCarousel.style.display = 'flex';
+divCarousel.style.flexDirection = 'column';
+divCarousel.style.marginLeft = '45%';
+divCarousel.style.padding = '1em';
+
 divCarousel.appendChild(divInnerCarousel);
 
+container.appendChild(divCarousel);
+container.appendChild(h2);
 body.appendChild(nav);
-
-body.appendChild(h2);
-body.appendChild(divCarousel);
+body.appendChild(container);

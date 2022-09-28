@@ -1,8 +1,3 @@
-export const PcMacComponent = document.createElement('div');
-
-const txt = document.createTextNode('PC / MAC');
-const p = document.createElement('p');
-
-p.appendChild(txt);
-
-PcMacComponent.appendChild(p);
+import { createDiv } from "./functions.js";
+const p = '';
+export const PcMacComponent = createDiv('PcMacComponentId','PcMacComponentClass','PC / MAC',p);

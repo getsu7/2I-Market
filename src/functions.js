@@ -59,27 +59,27 @@ export function createDiv(variableId, variableClass, text = null, p = p) {
 
 }
 
-export function createAHrefForDiv(variableA, Div, numberA) {
-    for (let i = 0; i < numberA; i++) {
-        variableA = document.createElement('a');
-        variableA.href = '#';
-        variableA.setAttribute('id', variableA.id + i);
+// export function createAHrefForDiv(variableA, Div, numberA) {
+//     for (let i = 0; i < numberA; i++) {
+//         variableA = document.createElement('a');
+//         variableA.href = '#';
+//         variableA.setAttribute('id', variableA.id + i);
     
-        Div.appendChild(variableA);
-    }
-    return Div;
-}
+//         Div.appendChild(variableA);
+//     }
+//     return Div;
+// }
 
-export function createLi(constLi, numberLi, constUl) {
-    for (let i = 0; i < numberLi; i++) {
-        constLi = document.createElement('li');
-        constLi.setAttribute('id', 'variableLi' + i);
-        constLi.setAttribute('class', 'variableLi');
+// export function createLi(constLi, numberLi, constUl) {
+//     for (let i = 0; i < numberLi; i++) {
+//         constLi = document.createElement('li');
+//         constLi.setAttribute('id', 'variableLi' + i);
+//         constLi.setAttribute('class', 'variableLi');
 
-        constUl.appendChild(constLi);
-    }
-    return constUl;
-}
+//         constUl.appendChild(constLi);
+//     }
+//     return constUl;
+// }
 
 export const container = document.createElement('div');
 
@@ -107,5 +107,49 @@ export const createCarousel = function createCarousel(objet){
         container.appendChild(divCarousel);
 
         document.body.appendChild(container);
+    })
+}
+
+const divContainerCard = document.createElement('div');
+
+divContainerCard.setAttribute('id','myContainerCard');
+addStyleFlexCenter(divContainerCard);
+
+export function createCard(card) {
+    Object.values(card).forEach((item) => {
+
+        const divCard = document.createElement('div');
+        divCard.setAttribute('class', 'card');
+        divCard.style.width = '25%';
+        divCard.style.marginLeft = '2%';
+
+        const divBody = document.createElement('div');
+        divBody.setAttribute('class', 'card-body');
+
+        const img = document.createElement('img');
+        img.src = item.img.src;
+        img.setAttribute('class', item.img.class);
+        img.style.width = item.img.width;
+        img.style.height = item.img.height;
+
+        const h5 = document.createElement('h5');
+        h5.appendChild(document.createTextNode(item.title));
+
+        const p = document.createElement('p');
+        p.appendChild(document.createTextNode(item.paragraphe));
+
+        const a = document.createElement('a');
+        a.setAttribute('href', item.link.href);
+        a.appendChild(document.createTextNode(item.link.texte));
+
+
+        divCard.appendChild(img);
+        divCard.appendChild(divBody);
+        divBody.appendChild(h5);
+        divBody.appendChild(p);
+        divBody.appendChild(a);
+
+        divContainerCard.appendChild(divCard);
+        container.appendChild(divContainerCard);
     })
 }

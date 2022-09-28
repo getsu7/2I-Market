@@ -12,6 +12,8 @@ import { createCarousel } from "./functions.js";
 
 import { container } from "./functions.js";
 
+import { createCard } from "./functions.js";
+
 const body = document.body;
 
 const h2 = document.createElement('h2');
@@ -126,8 +128,68 @@ const carousel = {
 
 createCarousel(carousel);
 
-
-
+const cards = {
+    card1:{
+        title: 'Card 1',
+        paragraphe: 'Lorem Ipsum',
+        img: {
+            src: 'images/proxy-image3.jpg',
+            class: 'card-img-top',
+            width: '100%',
+            height: '100%',
+        },
+        link: {
+            href: '#',
+            texte: 'Go somewhere',
+        }
+    },
+    card2:{
+        title: 'Card 2',
+        paragraphe: 'Lorem Ipsum - Card 2',
+        img: {
+            src: 'images/proxy-image3.jpg',
+            class: 'card-img-top',
+            width: '100%',
+            height: '100%',
+        },
+        link: {
+            href: '#',
+            texte: 'Go somewhere',
+        }
+    },
+    card3:{
+        title: 'Card 3',
+        paragraphe: 'Lorem Ipsum - Card 3',
+        img: {
+            src: 'images/proxy-image3.jpg',
+            class: 'card-img-top',
+            width: '100%',
+            height: '100%',
+        },
+        link: {
+            href: '#',
+            texte: 'Go somewhere',
+        }
+    },
+    card4:{
+        title: 'Card 4',
+        paragraphe: 'Lorem Ipsum - Card 4',
+        img: {
+            src: 'images/proxy-image3.jpg',
+            class: 'card-img-top',
+            width: '100%',
+            height: '100%',
+        },
+        link: {
+            href: '#',
+            texte: 'Go somewhere',
+        }
+    },
+    
+}
 
 container.appendChild(h2);
+
+createCard(cards);
+
 body.appendChild(container);

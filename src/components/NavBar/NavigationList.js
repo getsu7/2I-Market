@@ -1,24 +1,17 @@
 import insertElement from '../../functions/insertElement.js';
-import getPhone from '../Phone/index.js';
-import getComputer from '../Computer/index.js';
-import getConsole from '../Console/index.js';
-import getAppliances from '../Appliances/index.js';
+import Routes from '../../commons/Routes.js';
 
 const navigationItems = [{
-    click: getPhone,
-    href: '#',
+    href: Routes.phone,
     name: 'Smartphone',
 }, {
-    click: getComputer,
-    href: '#',
+    href: Routes.computer,
     name: 'Ordinateur',
 }, {
-    click: getConsole,
-    href: '#',
+    href: Routes.console,
     name: 'Console',
 }, {
-    click: getAppliances,
-    href: '#',
+    href: Routes.appliances,
     name: 'Eléctroménager',
 }];
 
@@ -29,11 +22,5 @@ export default function createNavigationList(container) {
         const navListItemLink = insertElement('a', 'nav-link', navListItem);
         navListItemLink.setAttribute('href', navigationItem.href);
         navListItemLink.appendChild(document.createTextNode(navigationItem.name));
-        navListItemLink.addEventListener('click', function() {
-            document.querySelectorAll('.content').forEach((item) => {
-                document.querySelector('#root').removeChild(item);
-            })
-            navigationItem.click();
-        })
     });
 }

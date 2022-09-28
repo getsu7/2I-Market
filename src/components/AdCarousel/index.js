@@ -46,5 +46,5 @@ export default function createCarousel(app) {
             return;
         }
         activeCarouselItem.classList.add('active');
-    }, 3000); 
+    }, 3000);
 }

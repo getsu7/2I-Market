@@ -1,4 +1,4 @@
-import insertElement from '../../functions/insertElement.js';
+import insertElement from '../../commons/functions/insertElement.js';
 import createCarousel from '../AdCarousel/index.js';
 
 export default function getHome() {

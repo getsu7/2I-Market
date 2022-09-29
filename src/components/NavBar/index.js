@@ -1,4 +1,4 @@
-import insertElement from '../../functions/insertElement.js';
+import insertElement from '../../commons/functions/insertElement.js';
 
 import createHomeLink from './HomeLink.js';
 import createToggleButton from './ToggleButton.js';

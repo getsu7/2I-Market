@@ -1,4 +1,4 @@
-import insertElement from '../../functions/insertElement.js';
+import insertElement from '../../commons/functions/insertElement.js';
 
 export default function createToggleButton(container) {
     const toggleButton = insertElement('button', 'navbar-toggler', container);

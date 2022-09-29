@@ -1,4 +1,4 @@
-import insertElement from '../../functions/insertElement.js';
+import insertElement from '../../commons/functions/insertElement.js';
 import Routes from '../../commons/Routes.js';
 
 const navigationItems = [{

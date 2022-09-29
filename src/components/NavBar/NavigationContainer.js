@@ -1,4 +1,4 @@
-import insertElement from '../../functions/insertElement.js';
+import insertElement from '../../commons/functions/insertElement.js';
 
 import createNavigationList from './NavigationList.js';
 import createSearchForm from './SearchForm.js';

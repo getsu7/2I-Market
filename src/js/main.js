@@ -1,37 +1,15 @@
-
-// Import all of Bootstrap's JS
 import '../scss/styles.scss';
 import * as bootstrap from 'bootstrap';
-import nav from "../../components/nav.js";
-import _ from 'lodash';
-import Icon from '../majeur.png';
+import navService from "../services/navService";
+import setupService from "../services/setupService";
+import {router} from "../router/index.route";
 
-function component() {
-    const element = document.createElement('div');
-    const myIcon = new Image();
-    myIcon.src = Icon;
-    element.appendChild(myIcon);
+const init = () => {
+    router(window.location.hash).then();
+    setupService()
+    window.addEventListener("hashchange", () => {
+        router(window.location.hash).then();
+    });
+};
 
-    document.body.appendChild(element);
-}
-
-document.body.appendChild(nav());
-
-component();
-
-
-export const routes = {
-    home: '/',
-    about: '/about',
-    contact: '/contact',
-    notFound: '/notFound'
-}
-
-export const getRoute = () => {
-    Object.entries(routes).forEach(([key, value]) => {
-        if (window.location.pathname === value) {
-            return key;
-        }
-        return routes.notFound;
-    })
-}
+window.addEventListener("load", init);

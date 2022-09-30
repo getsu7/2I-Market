@@ -10,7 +10,7 @@ divNavBarUl.appendChild(ul);
 
 export const createMenu =  function createNavBar(menu) {
     Object.values(menu).forEach((item) => {
-        console.log(item);
+        // console.log(item);
         const li = document.createElement('li');
         li.setAttribute('class', 'nav-item');
         const a = document.createElement('a');
@@ -37,62 +37,45 @@ export function addStyleFlexCenter(maVariable) {
     maVariable.style.justifyContent = 'center';
 }
 
-export function createDiv(variableId, variableClass, text = null, p = p) {
-    const body = document.body;
+export function createDiv(variableId, variableClass, text = null) {
 
     const divContainer = document.createElement('div');
     divContainer.setAttribute(variableId, divContainer.id);
     divContainer.setAttribute(variableClass, divContainer.class);
 
     if (text != null){
-        text = document.createTextNode(text)
 
-        p = document.createElement('p');
+        const p = document.createElement('p');
     
-        p.appendChild(text);
+        p.appendChild(document.createTextNode(text));
         divContainer.appendChild(p);
+
+        // console.log(divContainer);
+        divContainer.appendChild(container);
         return divContainer;
     }
     else {
+        divContainer.appendChild(container)
         return divContainer;
     }
 
 }
 
-// export function createAHrefForDiv(variableA, Div, numberA) {
-//     for (let i = 0; i < numberA; i++) {
-//         variableA = document.createElement('a');
-//         variableA.href = '#';
-//         variableA.setAttribute('id', variableA.id + i);
-    
-//         Div.appendChild(variableA);
-//     }
-//     return Div;
-// }
-
-// export function createLi(constLi, numberLi, constUl) {
-//     for (let i = 0; i < numberLi; i++) {
-//         constLi = document.createElement('li');
-//         constLi.setAttribute('id', 'variableLi' + i);
-//         constLi.setAttribute('class', 'variableLi');
-
-//         constUl.appendChild(constLi);
-//     }
-//     return constUl;
-// }
 
 export const container = document.createElement('div');
 
-const divCarousel = document.createElement('div');
 
-divCarousel.setAttribute('id', 'myCarousel');
-divCarousel.setAttribute('class', 'carousel slide');
-divCarousel.setAttribute('data-bs-ride', 'carousel');
-
-const divInnerCarousel = document.createElement('div');
-divInnerCarousel.setAttribute('class', 'carousel-inner');
 
 export const createCarousel = function createCarousel(objet){
+    const divCarousel = document.createElement('div');
+
+    divCarousel.setAttribute('id', 'myCarousel');
+    divCarousel.setAttribute('class', 'carousel slide');
+    divCarousel.setAttribute('data-bs-ride', 'carousel');
+
+    const divInnerCarousel = document.createElement('div');
+    divInnerCarousel.setAttribute('class', 'carousel-inner');
+
     Object.values(objet).forEach((item) => {
         const div = document.createElement('div');
         div.setAttribute('class', item.attributs.class);
@@ -104,24 +87,22 @@ export const createCarousel = function createCarousel(objet){
         divInnerCarousel.appendChild(div);
         divCarousel.appendChild(divInnerCarousel);
         
-        container.appendChild(divCarousel);
-
-        document.body.appendChild(container);
     })
+    return divCarousel;
 }
 
-const divContainerCard = document.createElement('div');
-
-divContainerCard.setAttribute('id','myContainerCard');
-addStyleFlexCenter(divContainerCard);
-
 export function createCard(card) {
+    const divContainerCard = document.createElement('div');
+    divContainerCard.setAttribute('id','myContainerCard');
+    addStyleFlexCenter(divContainerCard);
+
     Object.values(card).forEach((item) => {
 
         const divCard = document.createElement('div');
         divCard.setAttribute('class', 'card');
         divCard.style.width = '25%';
-        divCard.style.marginLeft = '2%';
+        divCard.style.marginLeft = '1%';
+        divCard.style.marginRight = '1%';
 
         const divBody = document.createElement('div');
         divBody.setAttribute('class', 'card-body');
@@ -150,6 +131,10 @@ export function createCard(card) {
         divBody.appendChild(a);
 
         divContainerCard.appendChild(divCard);
-        container.appendChild(divContainerCard);
+        // divContainer.appendChild(divContainerCard);
+        // return divContainer;
+        
+        
     })
+    return divContainerCard;
 }

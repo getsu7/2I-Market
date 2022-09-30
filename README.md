@@ -1,2 +1,4 @@
 # 2I-Market
-Un site de revente de matériel reconditionné
+Un site SPA de revente de matériel reconditionné
+
+add me @sudo-destin :)
